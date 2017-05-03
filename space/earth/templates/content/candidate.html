@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+    {% block content %}
+       <h1>Кандидат {{ candidate.name }}</h1>
+{% if not candidate.knighthood %}
+       {% for test in tests %}
+<h2>{{ forloop.counter}}.  <a href='/test/{{ candidate.id }}/{{ test.id }}'>{{ test.name }}</a>, Клан: {{ test.knighthood.name }}
+
+
+</h2>
+<hr>
+       {% endfor %}
+{% else %}
+<h3>Кандидат уже принят в клан {{ candidate.knighthood.name }}</h3>
+{% endif %}
+    {% endblock content %}

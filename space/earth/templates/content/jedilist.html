@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+
+    {% block content %}
+       <h1>Список джедаев</h1>
+       {% for jedi in jediList %}
+<h2>{{ forloop.counter}}.  <a href='/jedi/{{ jedi.id }}'>{{ jedi.name }}</a> Планета: {{ jedi.planet.name }}</h2>
+<hr>
+       {% endfor %}
+    {% endblock content %}

@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+    {% block content %}
+
+       <h1>Результаты тестов на планете {{ jedi.planet.name }}</h1>
+       {% if tests %}
+       {% for test in tests %}
+<div id = "row{{ forloop.counter }}">
+<h2>{{ forloop.counter}}.  {{ test.candidate.name }} |  {{ test.test.name }} ( {{ test.validAnswers }}/{{ test.test.total }} 
+)
+<a href="javascript:addClan({{ test.candidate.id }},{{ test.knighthood_id }},{{ forloop.counter}})">принять в клан {{jedi.knighthood.name}}</a>
+
+</h2>
+</div>
+<hr>
+       {% endfor %}
+       {% else %}
+
+<h3>Пока что никто тесты не проходил</h3>
+
+
+       {% endif %}
+    {% endblock content %}

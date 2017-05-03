@@ -1,0 +1,66 @@
+{% extends 'layout.html' %}
+
+    {% block content %}
+
+     <form class="form" method='post'>
+       <h1>{{ test.name }}</h1>
+
+{% if infotext %}
+       <h2 style='color:darkgreen'>{{ infotext }}</h2>
+{% endif %}
+
+	<h2><span class="label label-default">{{ test.question1 }}</span></h2>
+	<div class="btn-group btn-group-justified" data-toggle="buttons">
+        <label class="btn btn-primary active">
+            <input value="0" class="checkBoxType checkBoxType1" checked="checked" name="q1" id="q1" type="radio">НЕТ</label>
+        <label class="btn btn-primary">
+            <input value="1" class="checkBoxType checkBoxType2" name="q1" id="q1" type="radio">ДА</label>
+    </div>
+
+	<h2><span class="label label-default">{{ test.question2 }}</span></h2>
+	<div class="btn-group btn-group-justified" data-toggle="buttons">
+        <label class="btn btn-primary active">
+            <input value="0" class="checkBoxType checkBoxType1" checked="checked" name="q2" id="q2" type="radio">НЕТ</label>
+        <label class="btn btn-primary">
+            <input value="1" class="checkBoxType checkBoxType2" name="q2" id="q2" type="radio">ДА</label>
+    </div>
+
+	<h2><span class="label label-default">{{ test.question3 }}</span></h2>
+	<div class="btn-group btn-group-justified" data-toggle="buttons">
+        <label class="btn btn-primary active">
+            <input value="0" class="checkBoxType checkBoxType1" checked="checked" name="q3" id="q3" type="radio">НЕТ</label>
+        <label class="btn btn-primary">
+            <input value="1" class="checkBoxType checkBoxType2" name="q3" id="q3" type="radio">ДА</label>
+    </div>
+
+	{% if test.question4 %}
+
+	<h2><span class="label label-default">{{ test.question4 }}</span></h2>
+	<div class="btn-group btn-group-justified" data-toggle="buttons">
+        <label class="btn btn-primary active">
+            <input value="0" class="checkBoxType checkBoxType1" checked="checked" name="q4" id="q4" type="radio">НЕТ</label>
+        <label class="btn btn-primary">
+            <input value="1" class="checkBoxType checkBoxType2" name="q4" id="q4" type="radio">ДА</label>
+    </div>
+
+	{% endif %}
+
+	{% if test.question5 %}
+
+	<h2><span class="label label-default">{{ test.question5 }}</span></h2>
+	<div class="btn-group btn-group-justified" data-toggle="buttons">
+        <label class="btn btn-primary active">
+            <input value="0" class="checkBoxType checkBoxType1" checked="checked" name="q5" id="q5" type="radio">НЕТ</label>
+        <label class="btn btn-primary">
+            <input value="1" class="checkBoxType checkBoxType2" name="q5" id="q5" type="radio">ДА</label>
+    </div>
+
+<br /><br />
+    <input type='submit' class='btn btn-info' value='Отправить'>
+
+	 </form>
+
+	{% endif %}
+
+
+    {% endblock content %}

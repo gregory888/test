@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+    {% block content %}
+
+    <h1>Анкета кандидата</h1>
+    <form class="form" method='post'>
+        <h2><span class="label label-default">Имя:</span></h2>
+        {{ form.name  }}
+        {{ form.name.errors  }}
+        <h2><span class="label label-default">Планета:</span></h2>
+        {{ form.planet  }}
+        {{ form.planet.errors  }}
+        <h2><span class="label label-default">Возраст:</span></h2>
+        {{ form.age  }}
+        {{ form.age.errors  }}
+        <h2><span class="label label-default">Email:</span></h2>
+        {{ form.email  }}
+        {{ form.email.errors  }}
+        <br /><br />
+        <input class='btn btn-info' type="submit" value="Начать испытание" />
+    </form>
+
+
+    {% endblock content %}

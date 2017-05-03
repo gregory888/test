@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+    {% block content %}
+       <h1>Список кандидатов</h1>
+       {% for candidate in candidateList %}
+<h2>{{ forloop.counter}}.  <a href='/candidate/{{ candidate.id }}'>{{ candidate.name }}</a>, Планета: {{ candidate.planet.name }} ,
+Возраст: {{ candidate.age }},
+Email:  {{ candidate.email }}
+
+
+</h2>
+<hr>
+       {% endfor %}
+    {% endblock content %}
